@@ -6,216 +6,121 @@
   <title>The Great Shabi | Shelton Lambert</title>
   <meta name="description" content="Shelton Lambert, The Great Shabi. Psychic, Clairvoyant, Spiritual Consultant and Advisor on All Things Supernatural and the Occult.">
   <style>
-    body {
-      margin: 0;
-      background: #f7f0cf;
-      color: #24154a;
-      font-family: "Times New Roman", Georgia, serif;
+    :root { --cream:#f7f0cf; --paper:#fff8d8; --purple:#6b169b; --deep:#24154a; --pink:#a11f68; --gold:#ffd34d; --blue:#143c8c; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--cream); color:var(--deep); font-family:"Times New Roman",Georgia,serif; }
+    a { color:#0b45a0; font-weight:bold; }
+    .page { width:min(1180px,calc(100% - 28px)); margin:0 auto; padding:12px 0 18px; text-align:center; }
+    .stars { margin:2px 0; font-size:22px; letter-spacing:8px; color:var(--purple); }
+    header { padding:2px 12px 10px; }
+    h1 { margin:0; color:var(--purple); font-family:"Comic Sans MS","Brush Script MT",cursive; font-size:clamp(42px,6vw,72px); line-height:1; text-shadow:2px 2px 0 var(--gold); }
+    h2 { margin:3px 0 6px; color:var(--blue); font-size:25px; letter-spacing:.05em; }
+    .credentials { font-size:16px; font-weight:bold; line-height:1.35; }
+    .hero-row { display:grid; grid-template-columns:minmax(280px, .8fr) minmax(420px,1.2fr); gap:16px; align-items:stretch; }
+    .portrait-frame { min-height:350px; max-height:410px; overflow:hidden; border:8px ridge #7d2ba8; background:#fff; }
+    .portrait { display:block; width:100%; height:100%; object-fit:cover; object-position:center 22%; }
+    .box { border:4px double #7d2ba8; background:var(--paper); padding:16px; }
+    .box h3 { margin:0 0 9px; color:var(--pink); font-size:23px; }
+    .booking { display:flex; flex-direction:column; justify-content:center; }
+    .availability { margin:5px auto 10px; max-width:600px; font-size:18px; line-height:1.35; }
+    .phone { margin:3px 0 7px; color:#531472; font-size:clamp(30px,4vw,43px); font-weight:bold; letter-spacing:.04em; line-height:1; }
+    .phone .easter { display:inline-block; font-family:"Arial Rounded MT Bold","Trebuchet MS",Arial,sans-serif; font-weight:700; letter-spacing:-.055em; transform:translateY(1px); }
+    .booking-link { display:inline-block; margin:5px 0; }
+    .welcome { margin:13px auto 0; padding-top:11px; max-width:660px; border-top:1px dotted #9b6aaa; line-height:1.35; }
+    .welcome p { margin:5px 0; }
+    .grid-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; align-items:stretch; }
+    .oracle { border:6px ridge #d8b93f; background:#17102d; color:#fff; }
+    .oracle h3 { color:#ffe965; }
+    button { padding:9px 16px; border:4px outset #c7a72b; background:#f4d84a; color:#321454; cursor:pointer; font:bold 17px "Times New Roman",serif; }
+    button:active { border-style:inset; }
+    #answer { min-height:25px; margin-top:12px; font-size:19px; font-weight:bold; }
+    .blink { animation:blink 1.1s steps(2,start) infinite; }
+    @keyframes blink { 50% { visibility:hidden; } }
+    .about p { margin:8px 0; line-height:1.4; }
+    .links { display:grid; gap:8px; margin-top:14px; }
+    .links a { display:block; padding:7px 10px; border:1px dotted #7d2ba8; background:#fffdf0; }
+    footer { margin-top:14px; padding:8px; font-size:12px; }
+    footer .stars { font-size:17px; }
+    .tiny { font-size:12px; }
+    @media (max-width:760px) {
+      .page { width:min(100% - 18px,620px); }
+      .hero-row,.grid-row { grid-template-columns:1fr; gap:10px; margin-top:10px; }
+      .portrait-frame { min-height:0; height:330px; }
+      .portrait { object-position:center 19%; }
+      .box { padding:14px; }
+      .credentials { font-size:15px; }
+      .phone { font-size:34px; }
     }
-
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 18px;
-      text-align: center;
-    }
-
-    .stars {
-      font-size: 28px;
-      letter-spacing: 8px;
-      margin: 6px 0;
-    }
-
-    h1 {
-      font-family: "Comic Sans MS", "Brush Script MT", cursive;
-      font-size: clamp(42px, 8vw, 84px);
-      margin: 8px 0 0;
-      color: #6b169b;
-      text-shadow: 2px 2px 0 #ffd34d;
-    }
-
-    h2 {
-      margin: 4px 0 8px;
-      font-size: 28px;
-      color: #143c8c;
-    }
-
-    .credentials {
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-
-    .hero {
-      width: min(100%, 520px);
-      border: 8px ridge #7d2ba8;
-      background: white;
-      margin: 12px auto 18px;
-      display: block;
-    }
-
-    .box {
-      border: 4px double #7d2ba8;
-      background: #fff8d8;
-      padding: 16px;
-      margin: 18px auto;
-      max-width: 720px;
-    }
-
-    .box h3 {
-      margin-top: 0;
-      color: #a11f68;
-      font-size: 25px;
-    }
-
-    .oracle {
-      background: #17102d;
-      color: white;
-      padding: 22px;
-      border: 6px ridge #d8b93f;
-    }
-
-    button {
-      font: bold 18px "Times New Roman", serif;
-      background: #f4d84a;
-      color: #321454;
-      border: 4px outset #c7a72b;
-      padding: 10px 18px;
-      cursor: pointer;
-    }
-
-    button:active {
-      border-style: inset;
-    }
-
-    #answer {
-      min-height: 28px;
-      margin-top: 16px;
-      font-size: 21px;
-      font-weight: bold;
-    }
-
-    .links a {
-      display: inline-block;
-      margin: 4px 8px;
-      color: #0b45a0;
-      font-weight: bold;
-    }
-
-    .blink {
-      animation: blink 1.1s steps(2, start) infinite;
-    }
-
-    @keyframes blink {
-      50% { visibility: hidden; }
-    }
-
-    footer {
-      margin: 32px 0 14px;
-      font-size: 14px;
-    }
-
-    .tiny {
-      font-size: 12px;
-    }
+    @media (prefers-reduced-motion:reduce) { .blink { animation:none; } }
   </style>
 </head>
 <body>
   <main class="page">
-    <div class="stars">✦ ✧ ✦ ✧ ✦</div>
+    <header>
+      <div class="stars">✦ ✧ ✦ ✧ ✦</div>
+      <h1>THE GREAT SHABI</h1>
+      <h2>SHELTON LAMBERT</h2>
+      <div class="credentials">Psychic • Clairvoyant • Spiritual Consultant<br>Advisor on All Things Supernatural and the Occult</div>
+    </header>
 
-    <h1>THE GREAT SHABI</h1>
-    <h2>SHELTON LAMBERT</h2>
-
-    <div class="credentials">
-      Psychic • Clairvoyant • Spiritual Consultant<br>
-      Advisor on All Things Supernatural and the Occult
-    </div>
-
-    <img class="hero" src="assets/shabi-shelton-crop.jpg" alt="Shelton Lambert, The Great Shabi">
-
-    <div class="box">
-      <h3>WELCOME, SEEKER!</h3>
-      <p>
-        You have arrived here for a reason. Perhaps you know that reason.
-        Perhaps you do not. Either way, The Great Shabi is prepared to assist
-        you with matters of destiny, spirit, intuition, unexplained phenomena,
-        personal questions and other concerns of an unusual nature.
-      </p>
-      <p><b>THE FUTURE IS NOT CLOSED.</b></p>
-    </div>
-
-    <div class="box oracle">
-      <h3 style="color:#ffe965;">ASK THE GREAT SHABI</h3>
-      <p>Concentrate on one question. Ask only what you are prepared to know.</p>
-      <button id="askButton">REVEAL MY ANSWER</button>
-      <div id="answer">✦</div>
-    </div>
-
-    <div class="box">
-      <h3>PREDICTIONS & WARNINGS</h3>
-      <p><span class="blink">NEW!</span> More predictions will be posted as they are received.</p>
-      <p>Some impressions arrive clearly. Others require time, symbols, dreams or repeated confirmation.</p>
-    </div>
-
-    <div class="box">
-      <h3>ABOUT SHELTON</h3>
-      <p>
-        Shelton Lambert has spent years studying intuition, psychic phenomena,
-        spiritual communication, signs, coincidence, dreams, unexplained events
-        and the unseen forces that surround everyday life.
-      </p>
-      <p>
-        Known professionally as <b>The Great Shabi</b>, Shelton offers insight
-        without judgment and approaches each case individually.
-      </p>
-    </div>
-
-    <div class="box">
-      <h3>FROM THE SHABI ARCHIVES</h3>
-      <div class="links">
-        <a href="assets/shabi-and-friend.jpg">Early Appearance</a>
-        <a href="assets/shabi-stage.jpg">On Stage</a>
-        <a href="assets/shabi-group.jpg">Friends & Associates</a>
+    <section class="hero-row">
+      <div class="portrait-frame">
+        <img class="portrait" src="assets/shelton-lambert.jpg" alt="Shelton Lambert, The Great Shabi">
       </div>
-    </div>
+      <div class="box booking">
+        <h3>BOOK OR CONSULT WITH THE GREAT SHABI</h3>
+        <p class="availability"><b>Available for parties, birthdays, bat mitzvahs, hen dos, special events and private consultations.</b></p>
+        <p class="phone">909-743-<span class="easter">8008</span></p>
+        <p><a class="booking-link" href="tel:+19097438008">CALL FOR BOOKINGS OR A PERSONAL CONSULTATION</a></p>
+        <p>Email: <a href="mailto:sheltonlambertisthegreatshabi@yahoo.com">sheltonlambertisthegreatshabi@yahoo.com</a></p>
+        <p class="tiny">Please leave your name and a brief explanation of your inquiry.</p>
+        <div class="welcome">
+          <h3>WELCOME, SEEKER!</h3>
+          <p>You have arrived here for a reason. Perhaps you know that reason. Perhaps you do not. Either way, The Great Shabi is prepared to assist you with matters of destiny, spirit, intuition, unexplained phenomena, personal questions and other concerns of an unusual nature.</p>
+          <p><b>THE FUTURE IS NOT CLOSED.</b></p>
+        </div>
+      </div>
+    </section>
 
-    <div class="box">
-      <h3>BOOK OR CONSULT WITH THE GREAT SHABI</h3>
-      <p><b>Available for parties, birthdays, bat mitzvahs, hen dos, special events and private consultations.</b></p>
-      <p style="font-size:32px;font-weight:bold;letter-spacing:2px;">909-743-<span style="font-family:Arial Black,Arial,sans-serif;letter-spacing:-1px;">8008</span></p>
-      <p><a href="tel:+19097438008">CALL FOR BOOKINGS OR A PERSONAL CONSULTATION</a></p>
-      <p>Email: <a href="mailto:sheltonlambertisthegreatshabi@yahoo.com">sheltonlambertisthegreatshabi@yahoo.com</a></p>
-      <p class="tiny">Please leave your name and a brief explanation of your inquiry.</p>
-    </div>
+    <section class="grid-row">
+      <div class="box oracle">
+        <h3>ASK THE GREAT SHABI</h3>
+        <p>Concentrate on one question. Ask only what you are prepared to know.</p>
+        <button id="askButton">REVEAL MY ANSWER</button>
+        <div id="answer">✦</div>
+      </div>
+      <div class="box">
+        <h3>PREDICTIONS &amp; WARNINGS</h3>
+        <p><span class="blink">NEW!</span> More predictions will be posted as they are received.</p>
+        <p>Some impressions arrive clearly. Others require time, symbols, dreams or repeated confirmation.</p>
+      </div>
+    </section>
+
+    <section class="grid-row">
+      <div class="box about">
+        <h3>ABOUT SHELTON</h3>
+        <p>Shelton Lambert has spent years studying intuition, psychic phenomena, spiritual communication, signs, coincidence, dreams, unexplained events and the unseen forces that surround everyday life.</p>
+        <p>Known professionally as <b>The Great Shabi</b>, Shelton offers insight without judgment and approaches each case individually.</p>
+      </div>
+      <div class="box">
+        <h3>FROM THE SHABI ARCHIVES</h3>
+        <div class="links">
+          <a href="assets/shabi-and-friend.jpg">Early Appearance</a>
+          <a href="assets/shabi-stage.jpg">On Stage</a>
+          <a href="assets/shabi-group.jpg">Friends &amp; Associates</a>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <div class="stars">✦ ✧ ✦</div>
-      <b>THE GREAT SHABI</b><br>
-      Psychic • Clairvoyant • Spiritual Consultant<br><br>
+      <b>THE GREAT SHABI</b> • Psychic • Clairvoyant • Spiritual Consultant<br>
       <span class="tiny">Website personally approved by Shelton Lambert.</span>
     </footer>
   </main>
-
   <script>
-    const answers = [
-      "YES, BUT NOT YET.",
-      "THE SIGNS ARE FAVORABLE.",
-      "YOU ALREADY KNOW THE ANSWER.",
-      "ASK AGAIN AFTER SUNSET.",
-      "NOT IN THE WAY YOU EXPECT.",
-      "A STRANGER IS INVOLVED.",
-      "THE ANSWER IS CLOSE BY.",
-      "DO NOT FORCE IT.",
-      "THERE IS INTERFERENCE.",
-      "THE GREAT SHABI SAYS: PROBABLY."
-    ];
-
-    document.getElementById("askButton").addEventListener("click", function () {
-      const answer = answers[Math.floor(Math.random() * answers.length)];
-      document.getElementById("answer").textContent = answer;
-    });
+    const answers=["YES, BUT NOT YET.","THE SIGNS ARE FAVORABLE.","YOU ALREADY KNOW THE ANSWER.","ASK AGAIN AFTER SUNSET.","NOT IN THE WAY YOU EXPECT.","A STRANGER IS INVOLVED.","THE ANSWER IS CLOSE BY.","DO NOT FORCE IT.","THERE IS INTERFERENCE.","THE GREAT SHABI SAYS: PROBABLY."];
+    document.getElementById("askButton").addEventListener("click",function(){document.getElementById("answer").textContent=answers[Math.floor(Math.random()*answers.length)];});
   </script>
 </body>
 </html>
